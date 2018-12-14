@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Header from './Header'
 import Footer from './Footer'
 import { RoundedLogo } from './Logo'
+import Media from '../../theme/Media'
 
 export default function Layout({ forContent, title, children }) {
   return (
@@ -43,10 +44,6 @@ Layout.defaultProps = {
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr minmax(280px, 4fr) 1fr;
-
-  ${Media.phone`
-    display: flex;
-  `};
 `
 
 const Left = styled.div`
@@ -54,19 +51,15 @@ const Left = styled.div`
   align-items: start;
   height: 24px;
 
-  & > * {
-    @media (max-width: 500px) {
-      display: none;
-    }
-  }
+  ${Media.phone`
+    display: none;
+  `};
 `
 
 const Right = styled.div`
-  & > * {
-    @media (max-width: 500px) {
-      display: none;
-    }
-  }
+  ${Media.phone`
+    display: none;
+  `};
 `
 
 const Content = styled.div`
